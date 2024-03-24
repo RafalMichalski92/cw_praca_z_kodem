@@ -1,2 +1,2 @@
- install:
- pip install –r requirements.txt
+ test:
+	pip install -r requirements.txt
