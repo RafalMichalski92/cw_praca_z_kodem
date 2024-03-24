@@ -11,10 +11,8 @@ def index():
 @app.route('/hello/<name>')
 def hello(name=None):
     if name:
-        name = escape(name)  # Zabezpiecz przed potencjalnymi atakami XSS
+        name = escape(name)
     else:
-        name = "Rafał"  # Domyślne imię, jeśli nie podano parametru
+        name = "Rafał"
     return render_template('hello.html', name=name)
 
-if __name__ == "__main__":
-    app.run(debug=True)
