@@ -1,3 +1,7 @@
+"""
+Prosta aplikacja Flask do wyświetlania imienia.
+"""
+
 from flask import Flask, render_template
 from markupsafe import escape
 
@@ -11,8 +15,10 @@ def index():
 @app.route('/hello/<name>')
 def hello(name=None):
     if name:
-        name = escape(name)
+        name = escape(name) 
     else:
-        name = "Rafał"
+        name = "Rafał"  
     return render_template('hello.html', name=name)
 
+if __name__ == "__main__":
+    app.run(debug=True)
